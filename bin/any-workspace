@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# omarchy:summary=Show the Any Workspace overlay to go to / move a window to a numbered workspace
+# omarchy:args=go-to | move-to
+# omarchy:examples=any-workspace go-to | any-workspace move-to
+
+# Thin wrapper around the overlay summon so keybindings stay a clean one-liner
+# instead of spelling out the omarchy-shell JSON payload. Invoked by path from
+# the user's Hyprland bindings (e.g.
+#   o.bind(..., "~/.config/omarchy/plugins/any-workspace/bin/any-workspace go-to")
+# ). The overlay dispatches hyprctl itself on submit.
+
+set -euo pipefail
+
+mode="${1:-}"
+
+case "$mode" in
+  go-to | move-to) ;;
+  *)
+    echo "usage: any-workspace go-to|move-to" >&2
+    exit 1
+    ;;
+esac
+
+omarchy-shell shell summon any-workspace "{\"mode\":\"$mode\"}"

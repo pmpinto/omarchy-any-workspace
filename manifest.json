@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "id": "any-workspace",
+  "name": "Any Workspace",
+  "version": "1.0.0",
+  "author": "pmpinto",
+  "description": "Visual prompt to go to or move a window to any numbered workspace",
+  "kinds": [
+    "overlay"
+  ],
+  "keepLoaded": true,
+  "entryPoints": {
+    "overlay": "WorkspacePrompt.qml"
+  }
+}
