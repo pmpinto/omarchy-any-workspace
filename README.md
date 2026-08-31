@@ -35,10 +35,10 @@ workspace 10. Non-numeric input is ignored and the overlay simply closes.
 
 - A keybinding summons the overlay through the bundled `bin/any-workspace` wrapper:
   ```sh
-  ~/.config/omarchy/plugins/any-workspace/bin/any-workspace go-to
-  ~/.config/omarchy/plugins/any-workspace/bin/any-workspace move-to
+  ~/.config/omarchy/plugins/pmpinto.any-workspace/bin/any-workspace go-to
+  ~/.config/omarchy/plugins/pmpinto.any-workspace/bin/any-workspace move-to
   ```
-  (each of which calls `omarchy-shell shell summon any-workspace '{"mode":"..."}'`).
+  (each of which calls `omarchy-shell shell summon pmpinto.any-workspace '{"mode":"..."}'`).
 - The overlay keeps the digits you type in memory and, on submit, dispatches:
   ```sh
   hyprctl dispatch "hl.dsp.focus({workspace='10'})"
@@ -54,20 +54,20 @@ Install from the plugin repository:
 omarchy plugin add git@github.com:pmpinto/omarchy-any-workspace.git --enable
 ```
 
-This clones the plugin into `~/.config/omarchy/plugins/any-workspace/`, validates
-it, and enables it. It must remain listed in the `plugins[]` array of
+This clones the plugin into `~/.config/omarchy/plugins/pmpinto.any-workspace/`,
+validates it, and enables it. It must remain listed in the `plugins[]` array of
 `~/.config/omarchy/shell.json` so the non-first-party overlay is enabled:
 
 ```json
 "plugins": [
-  { "id": "any-workspace" }
+  { "id": "pmpinto.any-workspace" }
 ]
 ```
 
 Update later with:
 
 ```sh
-omarchy plugin update any-workspace
+omarchy plugin update pmpinto.any-workspace
 ```
 
 ## Keybindings
@@ -83,9 +83,9 @@ hl.unbind("SUPER + SHIFT + ALT + code:20")
 hl.unbind("SUPER + SHIFT + ALT + code:21")
 
 o.bind("SUPER + ALT + code:21", "Go to workspace",
-  "~/.config/omarchy/plugins/any-workspace/bin/any-workspace go-to")
+  "~/.config/omarchy/plugins/pmpinto.any-workspace/bin/any-workspace go-to")
 o.bind("SUPER + ALT + SHIFT + code:21", "Move window to workspace",
-  "~/.config/omarchy/plugins/any-workspace/bin/any-workspace move-to")
+  "~/.config/omarchy/plugins/pmpinto.any-workspace/bin/any-workspace move-to")
 ```
 
 Pick whatever keys suit you — only the `o.bind` command needs to match.
@@ -95,7 +95,7 @@ variants; adjust them to your setup.)
 ## Removal
 
 ```sh
-omarchy plugin remove any-workspace
+omarchy plugin remove pmpinto.any-workspace
 ```
 
 ## Requirements
@@ -120,7 +120,7 @@ tests/model.test.js           node:test coverage for the validation rules
 `WorkspacePrompt.qml` is an overlay `kind` with `keepLoaded: true`, so the
 layer-shell window survives between summons within a shell session, exactly like
 `omarchy.reminders`. Dismissal goes through the shell host
-(`shell.hide("any-workspace")`) so it composes with other overlays.
+(`shell.hide("pmpinto.any-workspace")`) so it composes with other overlays.
 
 ## Validating changes
 

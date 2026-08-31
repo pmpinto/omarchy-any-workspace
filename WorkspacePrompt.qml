@@ -50,7 +50,7 @@ Item {
   function dismiss() {
     root.opened = false
     if (root.shell && typeof root.shell.hide === "function")
-      root.shell.hide((root.manifest && root.manifest.id) || "any-workspace")
+      root.shell.hide((root.manifest && root.manifest.id) || "pmpinto.any-workspace")
   }
 
   function toggle() {
@@ -81,7 +81,7 @@ Item {
     visible: root.opened
     anchors { top: true; bottom: true; left: true; right: true }
     color: "transparent"
-    WlrLayershell.namespace: "omarchy-any-workspace"
+    WlrLayershell.namespace: "omarchy-pmpinto-any-workspace"
     WlrLayershell.layer: WlrLayer.Overlay
     WlrLayershell.keyboardFocus: WlrKeyboardFocus.Exclusive
     exclusionMode: ExclusionMode.Ignore

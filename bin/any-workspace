@@ -7,7 +7,7 @@
 # Thin wrapper around the overlay summon so keybindings stay a clean one-liner
 # instead of spelling out the omarchy-shell JSON payload. Invoked by path from
 # the user's Hyprland bindings (e.g.
-#   o.bind(..., "~/.config/omarchy/plugins/any-workspace/bin/any-workspace go-to")
+#   o.bind(..., "~/.config/omarchy/plugins/pmpinto.any-workspace/bin/any-workspace go-to")
 # ). The overlay dispatches hyprctl itself on submit.
 
 set -euo pipefail
@@ -22,4 +22,4 @@ case "$mode" in
     ;;
 esac
 
-omarchy-shell shell summon any-workspace "{\"mode\":\"$mode\"}"
+omarchy-shell shell summon pmpinto.any-workspace "{\"mode\":\"$mode\"}"
