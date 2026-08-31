@@ -7,7 +7,7 @@ overlay (same pattern as `omarchy.reminders`) and dispatches straight to
 Hyprland through Omarchy's `hl.dsp.*` Dynamic State Protocol, so it works for
 any workspace number, including beyond 10.
 
-This replaces the old "workspaces beyond 10" flow, which made you type a number
+This replaces the old "[workspaces beyond 10](https://github.com/pmpinto/hyprland-workspaces-above-10)" flow, which made you type a number
 blindly into a Hyprland submap banner. Here you see exactly what you're typing
 in a styled card, and the number is validated before dispatch.
 
