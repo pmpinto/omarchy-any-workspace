@@ -51,7 +51,7 @@ workspace 10. Non-numeric input is ignored and the overlay simply closes.
 Install from the plugin repository:
 
 ```sh
-omarchy plugin add git@github.com:pmpinto/omarchy-any-workspace.git --enable
+omarchy plugin add https://github.com/pmpinto/omarchy-any-workspace.git --enable
 ```
 
 This clones the plugin into `~/.config/omarchy/plugins/pmpinto.any-workspace/`,
