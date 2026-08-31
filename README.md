@@ -11,6 +11,10 @@ This replaces the old "workspaces beyond 10" flow, which made you type a number
 blindly into a Hyprland submap banner. Here you see exactly what you're typing
 in a styled card, and the number is validated before dispatch.
 
+## Preview
+
+![Any Workspace overlay](preview.png)
+
 ## Usage
 
 The overlay is bound to two keys:
